@@ -34,7 +34,7 @@ const handleSubmit = (e) => {
       </div>
       <div>
         <label htmlFor="password">Password</label>
-        <input type="password" />
+        <input type="password" value={password} onChange={(e) => { setPassword({ ...password, value: e.target.value }); }}/>
       </div>
       <div>
         <button>Create Account</button>
