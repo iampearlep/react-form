@@ -1,11 +1,11 @@
 import React from 'react'
-import { Signup, Theme } from './components'
+import { Signup} from './components'
 
 const App = () => {
   return (
-    <>
+    <div className='app h-screen w-full flex justify-center items-center'>
       <Signup />
-    </>
+    </div>
   )
 }
 

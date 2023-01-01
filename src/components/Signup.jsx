@@ -14,35 +14,38 @@ const handleSubmit = (e) => {
   alert("Account Created");
 }; 
 
+
   return (
-    <div>
+    <div className='container w-1/2'>
+      <div>
       <div>
         <h1>Create an account</h1>
       </div>
       <form onSubmit={handleSubmit}>
-      <div>
+      <div className="flex flex-col">
         <label htmlFor="firstName">First name</label>
         <input type="text" value={firstName} onChange={e => setFirstName(e.target.value)}/>
       </div>
-      <div>
+      <div className="flex flex-col">
         <label htmlFor="lastName">Last name</label>
         <input type="text" value={lastName} onChange={e => setLastName(e.target.value)}/>
       </div>
-      <div>
+      <div className="flex flex-col">
         <label htmlFor="email">Email</label>
         <input type="email" value={email} onChange={e => setEmail(e.target.value)}/>
       </div>
-      <div>
+      <div className="flex flex-col">
         <label htmlFor="password">Password</label>
-        <input type="password" value={password} onChange={(e) => { setPassword({ ...password, value: e.target.value }); }}/>
+        <input type="password"/>
       </div>
-      <div>
+      <div className="flex flex-col">
         <button>Create Account</button>
       </div>
-      <div>
+      <div className="text-center">
         <p>Already have an account? <span>Log in</span></p>
       </div>
       </form>
+      </div>
     </div>
   )
 }
