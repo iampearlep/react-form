@@ -22,15 +22,15 @@ const handleSubmit = (e) => {
       <form onSubmit={handleSubmit}>
       <div>
         <label htmlFor="firstName">First name</label>
-        <input type="text" value={firstName} onChange={e => setName(e.target.value)}/>
+        <input type="text" value={firstName} onChange={e => setFirstName(e.target.value)}/>
       </div>
       <div>
         <label htmlFor="lastName">Last name</label>
-        <input type="text" value={lastName} onChange={e => setName(e.target.value)}/>
+        <input type="text" value={lastName} onChange={e => setLastName(e.target.value)}/>
       </div>
       <div>
         <label htmlFor="email">Email</label>
-        <input type="email" />
+        <input type="email" value={email} onChange={e => setEmail(e.target.value)}/>
       </div>
       <div>
         <label htmlFor="password">Password</label>
