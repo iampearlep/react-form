@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 
 const Signup = () => {
-
-  const [name, setName] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState({
     value:"",
@@ -21,8 +21,12 @@ const handleSubmit = (e) => {
       </div>
       <form onSubmit={handleSubmit}>
       <div>
-        <label htmlFor="name">Name</label>
-        <input type="text" value={name} onChange={e => setName(e.target.value)}/>
+        <label htmlFor="firstName">First name</label>
+        <input type="text" value={firstName} onChange={e => setName(e.target.value)}/>
+      </div>
+      <div>
+        <label htmlFor="lastName">Last name</label>
+        <input type="text" value={lastName} onChange={e => setName(e.target.value)}/>
       </div>
       <div>
         <label htmlFor="email">Email</label>
