@@ -17,12 +17,12 @@ const handleSubmit = (e) => {
   return (
     <div className='container w-5/6 bg-white py-6 px-6 rounded-lg md:w-2/6'>
       <div>
-      <div className=''>
-        <h1 className=''>Sign up</h1>
+      <div className='text-center'>
+        <h1 className='text-2xl font-semibold'>Sign up</h1>
       </div>
       <form className='w-full mx-auto' onSubmit={handleSubmit}>
       <div className="flex flex-col">
-        <label htmlFor="name">Name*</label>
+        <label htmlFor="name" className='text-sm'>Name*</label>
         <input className='border mt-1 mb-3 px-2 py-2 rounded-md' type="text" value={name} onChange={e => setName(e.target.value)} placeholder="Enter your name"/>
       </div>
       <div className="flex flex-col">
@@ -34,10 +34,10 @@ const handleSubmit = (e) => {
         <input  className='border mt-1 mb-3 px-2 py-2 rounded-md' type="password" placeholder="Create a password"/>
       </div>
       <div className="flex flex-col">
-        <button>Create account</button>
+        <button className='create py-2 rounded-lg my-3 text-md font-semibold text-white'>Create account</button>
       </div>
       <div className="text-center">
-        <p>Already have an account? <span>Log in</span></p>
+        <p className='text-sm'>Already have an account? <span className='text-pink-500 underline'>Log in</span></p>
       </div>
       </form>
       </div>
