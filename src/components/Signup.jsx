@@ -1,8 +1,7 @@
 import React, {useState} from 'react';
 
 const Signup = () => {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState({
     value:"",
@@ -16,30 +15,26 @@ const handleSubmit = (e) => {
 
 
   return (
-    <div className='container w-1/2'>
+    <div className='container w-5/6 bg-white py-6 px-6 rounded-lg md:w-2/6'>
       <div>
-      <div>
-        <h1>Create an account</h1>
+      <div className=''>
+        <h1 className=''>Sign up</h1>
       </div>
-      <form onSubmit={handleSubmit}>
+      <form className='w-full mx-auto' onSubmit={handleSubmit}>
       <div className="flex flex-col">
-        <label htmlFor="firstName">First name</label>
-        <input type="text" value={firstName} onChange={e => setFirstName(e.target.value)}/>
-      </div>
-      <div className="flex flex-col">
-        <label htmlFor="lastName">Last name</label>
-        <input type="text" value={lastName} onChange={e => setLastName(e.target.value)}/>
+        <label htmlFor="name">Name*</label>
+        <input className='border mt-1 mb-3 px-2 py-2 rounded-md' type="text" value={name} onChange={e => setName(e.target.value)} placeholder="Enter your name"/>
       </div>
       <div className="flex flex-col">
-        <label htmlFor="email">Email</label>
-        <input type="email" value={email} onChange={e => setEmail(e.target.value)}/>
+        <label htmlFor="email">Email*</label>
+        <input  className='border mt-1 mb-3 px-2 py-2 rounded-md' type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="Enter your email"/>
       </div>
       <div className="flex flex-col">
-        <label htmlFor="password">Password</label>
-        <input type="password"/>
+        <label htmlFor="password">Password*</label>
+        <input  className='border mt-1 mb-3 px-2 py-2 rounded-md' type="password" placeholder="Create a password"/>
       </div>
       <div className="flex flex-col">
-        <button>Create Account</button>
+        <button>Create account</button>
       </div>
       <div className="text-center">
         <p>Already have an account? <span>Log in</span></p>
