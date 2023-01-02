@@ -1,5 +1,9 @@
 import React, {useState} from 'react';
 
+const PasswordErrorMessage = () => {
+  return <p>Password should have at least 8 characters</p>
+}
+
 const Signup = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -31,7 +35,8 @@ const handleSubmit = (e) => {
       </div>
       <div className="flex flex-col">
         <label htmlFor="password">Password*</label>
-        <input  className='border mt-1 mb-3 px-2 py-2 rounded-md' type="password" placeholder="Create a password"/>
+        <input  className='border mt-1 mb-3 px-2 py-2 rounded-md' type="password" placeholder="Create a password" value={password} onChange={(e) => {setPassword({...password, value:e.target.value})}}/>
+        {password.isTouched && password.value.length < 8 ? (<PasswordErrorMessage />) : null}
       </div>
       <div className="flex flex-col">
         <button className='create py-2 rounded-lg my-3 text-md font-semibold text-white'>Create account</button>
