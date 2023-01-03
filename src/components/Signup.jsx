@@ -17,24 +17,36 @@ const EmailErrorMessage = () => {
 };
 
 const Signup = () => {
-  const [values, setValues] = useState({
-    name: "",
-    email: "",
-    password: "",
-  });
+  const [name, setName] = useState(""); 
+ const [email, setEmail] = useState(""); 
+ const [password, setPassword] = useState(""); 
+  // const [values, setValues] = useState({
+  //   name: "",
+  //   email: "",
+  //   password: "",
+  // });
+  
   const [focused, setFocused] = useState(false);
   
-  const handleChange = (e) => {
-    setValues({ ...values, [e.target.name]: e.target.value });
-  };
+  // const handleChange = (e) => {
+  //   setValues({ ...values, [e.target.name]: e.target.value });
+  // };
 
   const handleFocus = (e) => {
     setFocused(true);
   };
   
+  const clearForm = () => { 
+    setName(""); 
+    setEmail(""); 
+    setPassword(""); 
+  }; 
+  
+
   const handleSubmit = (e) => {
     e.preventDefault();
     alert("Account created!"); 
+    clearForm();
   };
 
   return (
@@ -53,10 +65,12 @@ const Signup = () => {
               type="text"
               name="name"
               pattern="^[a-zA-Z ]{2,30}$"
-              value={values.name}
+              value={name}
               onBlur={handleFocus}
               focused={focused.toString()}
-              onChange={handleChange}
+              onChange={(e) => {
+                setName(e.target.value)
+              }}
               placeholder="Enter your name"
               required
             />
@@ -69,10 +83,12 @@ const Signup = () => {
               name="email"
               pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
               placeholder="Enter your email"
-              value={values.email}
+              value={email}
               onBlur={handleFocus}
               focused={focused.toString()}
-              onChange={handleChange}
+              onChange={(e) => {
+                setEmail(e.target.value)
+              }}
               required
             />
             <EmailErrorMessage />
@@ -85,10 +101,12 @@ const Signup = () => {
               name="password"
               pattern="^(?=.*\d)(?=.*[a-zA-Z])[a-zA-Z0-9]{7,}$"
               placeholder="Create a password"
-              value={values.password}
+              value={password}
               onBlur={handleFocus}
               focused={focused.toString()}
-              onChange={handleChange}
+              onChange={(e) => {
+                setPassword(e.target.value)
+              }}
               required
             />
             <PasswordErrorMessage />
