@@ -126,3 +126,6 @@ input:focus{
 .create {
   background-color: #784BA0;
 }
+input:invalid[focused= "true"] ~ span {
+  display: block;
+}
